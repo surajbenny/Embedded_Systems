@@ -3,7 +3,7 @@ variables
 message BCM_msg b;
 mstimer t1;
 }
-on start
+on stop
 {
 settimer(t1,100)
 }
