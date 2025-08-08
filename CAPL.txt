@@ -13,5 +13,5 @@ settimer(t1,5000)
 on timer t1
 {
 output()
-settimer(t1,100)
+settimer(t1,90)
 }
