@@ -5,7 +5,9 @@ mstimer t1;
 }
 on start
 {
-settimer(t1,200)
+
+settimer(t1,5000)
+
 }
 
 on timer t1
