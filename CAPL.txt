@@ -1,0 +1,15 @@
+variables
+{
+message BCM_msg b;
+mstimer t1;
+}
+on start
+{
+settimer(t1,100)
+}
+
+on timer t1
+{
+output()
+settimer(t1,100)
+}
