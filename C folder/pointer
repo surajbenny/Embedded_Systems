@@ -13,9 +13,9 @@ int main()
     printf( "The address of &a:%d\n",&a);
     printf("The address of &b:%d\n",&b);
     printf("The address of &c:%d\n",&c);
-    printf("The address of a:%d\n",ptr1);
-    printf("The address of b:%d\n",ptr2);
-     printf("The address of c:%d\n",ptr3);
+    printf("The content inside ptr1 ,address of a:%d\n",ptr1);
+    printf("The content inside ptr2 ,address of b:%d\n",ptr2);
+    printf("The content inside ptr3 ,address of c:%d\n",ptr3);
     printf("The value inside the address of ptr1:%p\n",*ptr1);
     printf("The value inside the address of ptr2:%p\n",*ptr2);
     printf("The value inside the address of ptr3:%p\n",*ptr3);
