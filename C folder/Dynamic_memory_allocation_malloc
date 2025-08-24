@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int i,n;
+    int *ptr;
+
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    ptr= (int*)malloc(n*sizeof(int)); // allocating memory // ptr=(int*)malloc(40)
+    if (ptr==NULL)
+    {
+        printf("memory allocation is failed\n");
+        return 1;
+    }
+
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the elements %d: ",i+1);
+        scanf("%d",(ptr+i));
+    }
+    printf("values you entered are : ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d\n",*(ptr+i));
+
+    }
+    return 0;
+
+
+
+}
