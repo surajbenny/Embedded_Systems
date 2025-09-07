@@ -6,7 +6,7 @@ void odd(int num)
 {
     int mask;
     mask=1<<0;
-    if (num & mask)
+    if (num & mask) // or (num & 1)
     printf("number %d is odd\n",num);
     else
     printf("number %d is even\n",num);
