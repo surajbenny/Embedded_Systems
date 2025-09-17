@@ -2,9 +2,9 @@
  * GccApplication1.c
  *
  * Created: 11-09-2025 12:50:48
- * Author : My PC
+ * Author : My PC hello
  */ 
-#define F_CPU 16000000UL
+#define F_CPU 16000000UL 
 #include <avr/io.h>
 #include <util/delay.h>
 
