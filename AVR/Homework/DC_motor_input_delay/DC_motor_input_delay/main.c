@@ -8,7 +8,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-void cw(int t)
+void cw(void t)
 {
 	PORTB|=(1<<PORTB5);
 	PORTB&=~(1<<PORTB4);
