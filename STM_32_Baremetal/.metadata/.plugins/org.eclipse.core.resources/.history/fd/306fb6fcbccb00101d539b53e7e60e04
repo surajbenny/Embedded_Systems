@@ -60,7 +60,7 @@ typedef struct
 #define RCC_BASEADDR        0x40023800U
 
 /* ---------------------------------------------------------
- *  RCC REGISTER STRUCTURE (STM32F4  Series)
+ *  RCC REGISTER STRUCTURE (STM32F4 Series)
  * ---------------------------------------------------------*/
 typedef struct
 {
@@ -99,8 +99,6 @@ typedef struct
     volatile uint32_t CKGATENR;      // RCC clocks gated enable register              (0x90)
     volatile uint32_t DCKCFGR2;      // RCC Dedicated Clocks configuration register 2 (0x94)
 } RCC_RegDef_t;
-
-
 
 
 
