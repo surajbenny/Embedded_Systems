@@ -17,6 +17,9 @@
  */
 
 #include <stdint.h>
+#include "STM32F446XX.H"
+
+
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -24,6 +27,16 @@
 
 int main(void)
 {
-    /* Loop forever */
-	for(;;);
+	GPIOA_CLK_EN();
+	GPIOA->MODER &= ~(0x3 << (10));
+	GPIOA->MODER |= (0x1 << 10);
+	// Set output type to push-pull (default, bit 5 = 0)
+	GPIOA->OTYPER &= ~(1 << 5);
+	// Set output speed to medium (01)
+	GPIOA->OSPEEDR &= ~(0x3 << 10);
+	GPIOA->OSPEEDR |= (0x1 << 10);
+	// No pull-up/pull-down (00)
+	GPIOA->PUPDR &= ~(0x3 << 10);
+	GPIOA->ODR |= (1<<5);
+	//for(;;);
 }
