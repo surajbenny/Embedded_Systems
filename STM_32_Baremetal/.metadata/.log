@@ -499,3 +499,25 @@ C Model Exception: C Model Status [Element stm32f446xx.h does not exist.]
 	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
 !SUBENTRY 1 org.eclipse.cdt.core 4 969 2025-11-27 22:28:21.257
 !MESSAGE Element stm32f446xx.h does not exist.
+!SESSION 2025-11-28 13:08:19.426 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM_32_Baremetal\LED_Blink\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM_32_Baremetal\LED_Blink\.cproject
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-11-28 13:08:36.129
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-11-28 13:08:41.324
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-11-28 13:08:41.326
+!MESSAGE Log4j2 initialized with config file C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM_32_Baremetal\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-11-28 13:08:48.768
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-11-28 13:08:49.824
+!MESSAGE Indexed 'LED_Blink' (3 sources, 53 headers) in 0.847 sec: 1,954 declarations; 2,862 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
