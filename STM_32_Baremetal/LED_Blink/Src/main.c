@@ -18,6 +18,9 @@
 
 #include <stdint.h>
 #include "STM32F446XX.H"
+#include <stdio.h>
+#define LED_PIN     5
+#define BUTTON_PIN  13
 
 
 
@@ -25,18 +28,43 @@
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+
 int main(void)
 {
-	GPIOA_CLK_EN();
-	GPIOA->MODER &= ~(0x3 << (10));
-	GPIOA->MODER |= (0x1 << 10);
-	// Set output type to push-pull (default, bit 5 = 0)
-	GPIOA->OTYPER &= ~(1 << 5);
-	// Set output speed to medium (01)
-	GPIOA->OSPEEDR &= ~(0x3 << 10);
-	GPIOA->OSPEEDR |= (0x1 << 10);
-	// No pull-up/pull-down (00)
-	GPIOA->PUPDR &= ~(0x3 << 10);
-	GPIOA->ODR |= (1<<5);
-	//for(;;);
+    // 🔹 1. Enable clocks
+    GPIOA_CLK_EN();        // Enable GPIOA
+    GPIOC_CLK_EN();        // Enable GPIOC (needed for button!)
+
+    // 🔹 2. Configure LED (PA5)
+    GPIOA->MODER &= ~(0x3 << (LED_PIN * 2));   // Clear mode
+    GPIOA->MODER |=  (0x1 << (LED_PIN * 2));   // Set as output
+    GPIOA->OTYPER &= ~(0x1 << LED_PIN);        // Push-pull
+    GPIOA->OSPEEDR &= ~(0x3 << (LED_PIN * 2)); // Clear speed
+    GPIOA->OSPEEDR |=  (0x1 << (LED_PIN * 2)); // Medium speed
+    GPIOA->PUPDR   &= ~(0x3 << (LED_PIN * 2)); // No pull-up/down
+
+    // 🔹 3. Configure Button (PC13)
+    GPIOC->MODER &= ~(0x3 << (BUTTON_PIN * 2)); // Input mode
+    GPIOC->PUPDR &= ~(0x3 << (BUTTON_PIN * 2)); // Clear
+    GPIOC->PUPDR |=  (0x1 << (BUTTON_PIN * 2)); // Pull-up enabled
+
+    // 🔹 4. Main loop
+    while(1)
+    {
+        if (!(GPIOC->IDR & (1 << BUTTON_PIN)))   // Button pressed (active low)
+        {
+            GPIOA->ODR |=  (1 << LED_PIN);       // LED ON
+            // printf("button is pressed");      // Only works if UART/semihosting set up
+        }
+        else
+        {
+            GPIOA->ODR &= ~(1 << LED_PIN);       // LED OFF
+            // printf("button released");
+        }
+    }
 }
+
+
+
+
+
