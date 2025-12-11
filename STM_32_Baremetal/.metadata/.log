@@ -741,3 +741,22 @@ java.lang.IllegalStateException: bundle org.eclipse.equinox.p2.repository is not
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.getAvailableRepositories(UpdateChecker.java:164)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker.checkForUpdates(UpdateChecker.java:144)
 	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:83)
+!SESSION 2025-12-11 22:41:47.913 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM_32_Baremetal\LM_35\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM_32_Baremetal\LM_35\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-12-11 22:43:05.145
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-12-11 22:43:05.150
+!MESSAGE Log4j2 initialized with config file C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM_32_Baremetal\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-12-11 22:43:15.332
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-12-11 22:43:15.929
+!MESSAGE Indexed 'LM_35' (3 sources, 0 headers) in 0.062 sec: 69 declarations; 64 references; 11 unresolved inclusions; 0 syntax errors; 36 unresolved names (21%)
