@@ -1,0 +1,21 @@
+/*
+ * Stm32_f446xx.h
+ *
+ *  Created on: Jan 17, 2026
+ *      Author: My PC
+ */
+
+#ifndef INC_STM32_F446XX_H_
+#define INC_STM32_F446XX_H_
+/*
+Memory base address
+*/
+
+#define FLASH_BASEADDR	0x08000000U
+#define ROM_BASEADDR	0x1FFF0000U
+#define SRAM1_BASEADDR	0x20000000U
+#define SRAM2_BASEADDR	0x2001C000U
+
+
+
+#endif /* INC_STM32_F446XX_H_ */
