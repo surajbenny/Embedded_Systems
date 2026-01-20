@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;SPI/Drivers/inc/stm32f446xx.h&apos;" deleteContents="false" description="Delete resource &apos;SPI/Drivers/inc/stm32f446xx.h&apos;" element1="/SPI/Drivers/inc/stm32f446xx.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1767168119181"/>
+</session>
