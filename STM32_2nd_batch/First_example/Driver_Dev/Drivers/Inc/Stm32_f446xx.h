@@ -7,6 +7,9 @@
 
 #ifndef INC_STM32_F446XX_H_
 #define INC_STM32_F446XX_H_
+
+#include <stdio.h>
+#include <stdint.h>
 /*
 Memory base address
 */
@@ -134,6 +137,105 @@ typedef struct
 
 
 /*
+ * RCC
+ */
+
+typedef struct
+{
+	volatile uint32_t CR;
+	volatile uint32_t PLLCFGR;
+	volatile uint32_t CFGR;
+	volatile uint32_t CIR;
+	volatile uint32_t AHB1RSTR;
+	volatile uint32_t AHB2RSTR;
+	volatile uint32_t AHB3RSTR;
+	 uint32_t Reserved1;
+	volatile uint32_t APB1RSTR;
+	volatile uint32_t APB2RSTR;
+	 uint32_t Reserved2;
+	 uint32_t Reserved3;
+	volatile uint32_t AHB1ENR;
+	volatile uint32_t AHB2ENR;
+	volatile uint32_t AHB3ENR;
+	 uint32_t Reserved4;
+	volatile uint32_t APB1ENR;
+	volatile uint32_t APB2ENR;
+	 uint32_t Reserved5;
+	 uint32_t Reserved6;
+	volatile uint32_t AHB1LPENR;
+	volatile uint32_t AHB2LPENR;
+	volatile uint32_t AHB3LPENR;
+	 uint32_t Reserved7;
+	volatile uint32_t APB1LPENR;
+	volatile uint32_t APB2LPENR;
+	 uint32_t Reserved8;
+	 uint32_t Reserved9;
+	volatile uint32_t BDCR;
+	volatile uint32_t CSR;
+	 uint32_t Reserved10;
+	 uint32_t Reserved11;
+	volatile uint32_t SSCGR;
+	volatile uint32_t PLLI2SCFGR;
+	volatile uint32_t PLLSAICFGRDCR;
+	volatile uint32_t DCKCFGR;
+	volatile uint32_t CKGATENR;
+	volatile uint32_t DCKCFGR2;
+}RCC_RegDef_t;
+
+#define RCC				( RCC_RegDef_t*)(RCC_PERIPH_BASEADDR)
+
+/*
+ * Clock enable and disable macros for GPIO
+ */
+
+#define GPIOA_PCLK_EN()            (RCC->AHB1ENR)|=(1<<0)
+#define GPIOB_PCLK_EN()            (RCC->AHB1ENR)|=(1<<1)
+#define GPIOC_PCLK_EN()            (RCC->AHB1ENR)|=(1<<2)
+#define GPIOD_PCLK_EN()            (RCC->AHB1ENR)|=(1<<3)
+#define GPIOE_PCLK_EN()            (RCC->AHB1ENR)|=(1<<4)
+#define GPIOF_PCLK_EN()            (RCC->AHB1ENR)|=(1<<5)
+#define GPIOG_PCLK_EN()            (RCC->AHB1ENR)|=(1<<6)
+#define GPIOH_PCLK_EN()            (RCC->AHB1ENR)|=(1<<7)
+
+#define GPIOA_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<0)
+#define GPIOB_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<1)
+#define GPIOC_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<2)
+#define GPIOD_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<3)
+#define GPIOE_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<4)
+#define GPIOF_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<5)
+#define GPIOG_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<6)
+#define GPIOH_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<7)
+
+
+#define ENABLE                     1
+#define DISABLE					   0
+
+/*
+ * Clock enable and disable macros for SPI
+ */
+
+#define SPI1_PCLK_EN()              (RCC->APB2)|=(1<<12)
+#define SPI4_PCLK_EN()              (RCC->APB2)|=(1<<13)
+#define SPI2_PCLK_EN()              (RCC->APB1)|=(1<<14)
+#define SPI3_PCLK_EN()              (RCC->APB1)|=(1<<15)
+
+#define SPI1_PCLK_DI()              (RCC->APB2)&=~(1<<12)
+#define SPI4_PCLK_DI()              (RCC->APB2)&=~(1<<13)
+#define SPI2_PCLK_DI()              (RCC->APB1)&=~(1<<14)
+#define SPI3_PCLK_DI()              (RCC->APB1)&=~(1<<15)
+
+/*
+ * Clock enable and disable macros for I2C
+ */
+#define I2C1_PCLK_EN()                (RCC->APB1)|=(1<<21)
+#define I2C2_PCLK_EN()                (RCC->APB1)|=(1<<22)
+#define I2C3_PCLK_EN()                (RCC->APB1)|=(1<<23)
+
+#define I2C1_PCLK_DI()                (RCC->APB1)&=~(1<<21)
+#define I2C2_PCLK_DI()                (RCC->APB1)&=~(1<<22)
+#define I2C3_PCLK_DI()                (RCC->APB1)&=~(1<<23)
+
+/*
  * Structure for SPI
  */
 typedef struct
@@ -149,6 +251,13 @@ typedef struct
 	volatile uint32_t I2SPR;
 
 }SPI_RegDef_t;
+
+
+
+#define SPI1 			   ( SPI_RegDef_t*)(SPI1_BASEADDR)
+#define SPI2 			   ( SPI_RegDef_t*)(SPI2_BASEADDR)
+#define SPI3 			   ( SPI_RegDef_t*)(SPI3_BASEADDR)
+#define SPI4 			   ( SPI_RegDef_t*)(SPI4_BASEADDR)
 
 
 /*
@@ -171,6 +280,10 @@ typedef struct
 }I2C_RegDef_t;
 
 
+
+#define I2C1 			( I2C_RegDef_t*)(I2C1_BASEADDR)
+#define I2C2 			( I2C_RegDef_t*)(I2C2_BASEADDR)
+#define I2C3 			( I2C_RegDef_t*)(I2C3_BASEADDR)
 /*
  * Structure for UART
  */
@@ -186,6 +299,13 @@ typedef struct
 	volatile uint32_t GTPR;
 
 }UART_RegDef_t;
+
+#define UART1 			( UART_RegDef_t* )(USART1_BASEADDR)
+#define UART2 			( UART_RegDef_t* )(USART2_BASEADDR)
+#define UART3 			( UART_RegDef_t* )(USART3_BASEADDR)
+#define UART4 			( UART_RegDef_t* )(USART4_BASEADDR)
+#define UART5 			( UART_RegDef_t* )(USART5_BASEADDR)
+#define UART6 			( UART_RegDef_t* )(USART6_BASEADDR)
 
 
 #endif /* INC_STM32_F446XX_H_ */
