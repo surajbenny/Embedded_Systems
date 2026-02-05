@@ -30,7 +30,7 @@ typedef struct {
  */
 typedef struct {
     GPIO_RegDef_t *pGPIOx;         // Pointer to GPIO port (e.g., GPIOA, GPIOB)
-    GPIO_PinConfig_t GPIO_PinConfig; // Pin configuration settings(GPIO_PinConfig- its a structure)
+    GPIO_PinConfig_t GPIO_PinConfig; // Pin configuration settings
 } GPIO_Handle_t;
 
 
