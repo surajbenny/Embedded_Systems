@@ -1,0 +1,8 @@
+../Drivers/Src/stm32_f446xx_gpio_driver.c:25:7:GPIO_PericClockControl	18
+../Drivers/Src/stm32_f446xx_gpio_driver.c:114:6:GPIO_Init	2
+../Drivers/Src/stm32_f446xx_gpio_driver.c:152:6:GPIO_DeInit	1
+../Drivers/Src/stm32_f446xx_gpio_driver.c:170:10:GPIO_ReadFromInputPin	1
+../Drivers/Src/stm32_f446xx_gpio_driver.c:190:10:GPIO_ReadFromInputPort	1
+../Drivers/Src/stm32_f446xx_gpio_driver.c:211:6:GPIO_WriteToOutputPin	2
+../Drivers/Src/stm32_f446xx_gpio_driver.c:224:6:GPIO_WriteToOutputPort	1
+../Drivers/Src/stm32_f446xx_gpio_driver.c:229:6:GPIO_ToggleOutputPin	1

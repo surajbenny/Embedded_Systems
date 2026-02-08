@@ -136,6 +136,15 @@ typedef struct
 }GPIO_RegDef_t;
 
 
+#define GPIOA 			(GPIO_RegDef_t *)(GPIOA_PERIPH_BASEADDR)
+#define GPIOB 			(GPIO_RegDef_t *)(GPIOB_PERIPH_BASEADDR)
+#define GPIOC 			(GPIO_RegDef_t *)(GPIOC_PERIPH_BASEADDR)
+#define GPIOD 			(GPIO_RegDef_t *)(GPIOD_PERIPH_BASEADDR)
+#define GPIOE 			(GPIO_RegDef_t *)(GPIOE_PERIPH_BASEADDR)
+#define GPIOF 			(GPIO_RegDef_t *)(GPIOF_PERIPH_BASEADDR)
+#define GPIOG 			(GPIO_RegDef_t *)(GPIOG_PERIPH_BASEADDR)
+#define GPIOH 			(GPIO_RegDef_t *)(GPIOH_PERIPH_BASEADDR)
+
 /*
  * RCC
  */
@@ -182,7 +191,7 @@ typedef struct
 	volatile uint32_t DCKCFGR2;
 }RCC_RegDef_t;
 
-#define RCC				( RCC_RegDef_t*)(RCC_PERIPH_BASEADDR)
+#define RCC				 ((RCC_RegDef_t*)RCC_PERIPH_BASEADDR)
 
 /*
  * Clock enable and disable macros for GPIO
@@ -197,7 +206,7 @@ typedef struct
 #define GPIOG_PCLK_EN()            (RCC->AHB1ENR)|=(1<<6)
 #define GPIOH_PCLK_EN()            (RCC->AHB1ENR)|=(1<<7)
 
-#define GPIOA_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<0)
+#define GPIOA_PCLK_DI()            (RCC->AHB1ENR) &=~(1<<0)
 #define GPIOB_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<1)
 #define GPIOC_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<2)
 #define GPIOD_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<3)
@@ -214,26 +223,26 @@ typedef struct
  * Clock enable and disable macros for SPI
  */
 
-#define SPI1_PCLK_EN()              (RCC->APB2)|=(1<<12)
-#define SPI4_PCLK_EN()              (RCC->APB2)|=(1<<13)
-#define SPI2_PCLK_EN()              (RCC->APB1)|=(1<<14)
-#define SPI3_PCLK_EN()              (RCC->APB1)|=(1<<15)
+#define SPI1_PCLK_EN()              (RCC->APB2ENR)|=(1<<12)
+#define SPI4_PCLK_EN()              (RCC->APB2ENR)|=(1<<13)
+#define SPI2_PCLK_EN()              (RCC->APB1ENR)|=(1<<14)
+#define SPI3_PCLK_EN()              (RCC->APB1ENR)|=(1<<15)
 
-#define SPI1_PCLK_DI()              (RCC->APB2)&=~(1<<12)
-#define SPI4_PCLK_DI()              (RCC->APB2)&=~(1<<13)
-#define SPI2_PCLK_DI()              (RCC->APB1)&=~(1<<14)
-#define SPI3_PCLK_DI()              (RCC->APB1)&=~(1<<15)
+#define SPI1_PCLK_DI()              (RCC->APB2ENR)&=~(1<<12)
+#define SPI4_PCLK_DI()              (RCC->APB2ENR)&=~(1<<13)
+#define SPI2_PCLK_DI()              (RCC->APB1ENR)&=~(1<<14)
+#define SPI3_PCLK_DI()              (RCC->APB1ENR)&=~(1<<15)
 
 /*
  * Clock enable and disable macros for I2C
  */
-#define I2C1_PCLK_EN()                (RCC->APB1)|=(1<<21)
-#define I2C2_PCLK_EN()                (RCC->APB1)|=(1<<22)
-#define I2C3_PCLK_EN()                (RCC->APB1)|=(1<<23)
+#define I2C1_PCLK_EN()                (RCC->APB1ENR)|=(1<<21)
+#define I2C2_PCLK_EN()                (RCC->APB1ENR)|=(1<<22)
+#define I2C3_PCLK_EN()                (RCC->APB1ENR)|=(1<<23)
 
-#define I2C1_PCLK_DI()                (RCC->APB1)&=~(1<<21)
-#define I2C2_PCLK_DI()                (RCC->APB1)&=~(1<<22)
-#define I2C3_PCLK_DI()                (RCC->APB1)&=~(1<<23)
+#define I2C1_PCLK_DI()                (RCC->APB1ENR)&=~(1<<21)
+#define I2C2_PCLK_DI()                (RCC->APB1ENR)&=~(1<<22)
+#define I2C3_PCLK_DI()                (RCC->APB1ENR)&=~(1<<23)
 
 /*
  * Structure for SPI
