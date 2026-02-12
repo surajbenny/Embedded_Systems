@@ -1,21 +1,10 @@
-21:45:26 **** Build of configuration Debug for project Driver_Dev ****
+21:02:38 **** Incremental Build of configuration Debug for project Driver_Dev ****
 make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
-arm-none-eabi-gcc "../Src/GPIO_Toggle.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/GPIO_Toggle.d" -MT"Src/GPIO_Toggle.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/GPIO_Toggle.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Drivers/Src/stm32_f446xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Src/stm32_f446xx_gpio_driver.d" -MT"Drivers/Src/stm32_f446xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/Src/stm32_f446xx_gpio_driver.o"
-arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Driver_Dev.elf
- 
 arm-none-eabi-size  Driver_Dev.elf 
-arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
    text	   data	    bss	    dec	    hex	filename
-   1568	      0	   1568	   3136	    c40	Driver_Dev.elf
+   1572	      0	   1568	   3140	    c44	Driver_Dev.elf
 Finished building: default.size.stdout
  
-Finished building: Driver_Dev.list
- 
 
-21:45:28 Build Finished. 0 errors, 0 warnings. (took 1s.740ms)
+21:02:38 Build Finished. 0 errors, 0 warnings. (took 668ms)
 
