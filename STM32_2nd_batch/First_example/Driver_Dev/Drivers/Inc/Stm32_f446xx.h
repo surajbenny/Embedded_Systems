@@ -10,6 +10,23 @@
 
 #include <stdio.h>
 #include <stdint.h>
+
+
+
+
+/* ARM Cortex NVIC Processor NVIC ISERx register Addresses */
+#define NVIC_ISER0 (*(volatile uint32_t*)0xE000E100)
+#define NVIC_ISER1 (*(volatile uint32_t*)0xE000E104)
+#define NVIC_ISER2 (*(volatile uint32_t*)0xE000E108)
+#define NVIC_ISER3 (*(volatile uint32_t*)0xE000E10C)
+
+/* ARM Cortex NVIC Processor NVIC ICERx register Addresses */
+#define NVIC_ICER0 (*(volatile uint32_t*)0xE000E180)
+#define NVIC_ICER1 (*(volatile uint32_t*)0xE000E184)
+#define NVIC_ICER2 (*(volatile uint32_t*)0xE000E188)
+#define NVIC_ICER3 (*(volatile uint32_t*)0xE000E18C)
+
+
 /*
 Memory base address
 */
@@ -190,6 +207,31 @@ typedef struct
 	volatile uint32_t CKGATENR;
 	volatile uint32_t DCKCFGR2;
 }RCC_RegDef_t;
+
+// peripheral register definition  structure  for EXTI
+
+typedef struct
+{
+	volatile uint32_t IMR;    /*!< Interrupt Mask Register: enables/disables interrupt request for each EXTI line (1 = enabled, 0 = masked) */
+	volatile uint32_t EMR;    /*!< Event Mask Register: enables/disables event generation for each EXTI line (used for triggering peripherals internally) */
+	volatile uint32_t RTSR;   /*!< Rising Trigger Selection Register: configures which EXTI lines trigger on rising edge (0→1 transition) */
+	volatile uint32_t FTSR;   /*!< Falling Trigger Selection Register: configures which EXTI lines trigger on falling edge (1→0 transition) */
+	volatile uint32_t SWIER;  /*!< Software Interrupt Event Register: allows software to manually trigger an interrupt on an EXTI line */
+	volatile uint32_t PR;     /*!< Pending Register: shows which EXTI line has a pending interrupt; writing 1 clears the pending bit */
+} EXTI_RegDef_t;
+
+typedef struct
+{
+    volatile uint32_t MEMRMP;       /*!< Memory Remap Register: controls boot memory mapping (Flash, SRAM, System memory) */
+    volatile uint32_t PMC;          /*!< Peripheral Mode Configuration Register: manages certain peripheral modes (like voltage scaling) */
+    volatile uint32_t EXTICR[4];    /*!< External Interrupt Configuration Registers: map GPIO pins (PAx, PBx, PCx…) to EXTI lines 0–15 */
+    uint32_t RESERVED1[2];          /*!< Reserved for alignment */
+    volatile uint32_t CMPCR;                 /*!< Compensation Cell Control Register: used for I/O compensation cell (improves high‑speed I/O performance) */
+    uint32_t RESERVED2[2];          /*!< Reserved for alignment */
+    volatile uint32_t CFGR;         /*!< Configuration Register: additional system configuration options */
+} SYSCFG_RegDef_t;
+
+#define EXTI 			((EXTI_RegDef_t*)EXTI_BASEADDR)
 
 #define RCC				 ((RCC_RegDef_t*)RCC_PERIPH_BASEADDR)
 

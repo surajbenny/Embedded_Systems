@@ -1,25 +1,212 @@
-21:02:04 **** Build of configuration Debug for project Driver_Dev ****
+15:58:58 **** Incremental Build of configuration Debug for project Driver_Dev ****
 make -j12 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446retx.d" -MT"Startup/startup_stm32f446retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f446retx.o" "../Startup/startup_stm32f446retx.s"
-arm-none-eabi-gcc "../Src/LED_toggle.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/LED_toggle.d" -MT"Src/LED_toggle.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/LED_toggle.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Drivers/Src/stm32_f446xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Src/stm32_f446xx_gpio_driver.d" -MT"Drivers/Src/stm32_f446xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/Src/stm32_f446xx_gpio_driver.o"
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:44:25: warning: variable 'LED_stat' set but not used [-Wunused-but-set-variable]
+   44 |                 uint8_t LED_stat = 0 ;
+      |                         ^~~~~~~~
+../Src/Button_press_toggle_led.c: At top level:
+../Src/Button_press_toggle_led.c:37:14: warning: 'delay' defined but not used [-Wunused-function]
+   37 |         void delay (void )
+      |              ^~~~~
 arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Driver_Dev.elf
  
 arm-none-eabi-size  Driver_Dev.elf 
 arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
    text	   data	    bss	    dec	    hex	filename
-   1572	      0	   1568	   3140	    c44	Driver_Dev.elf
+   1852	      0	   1568	   3420	    d5c	Driver_Dev.elf
 Finished building: default.size.stdout
  
 Finished building: Driver_Dev.list
  
-21:02:38 **** Incremental Build of configuration Debug for project Driver_Dev ****
+15:59:03 **** Incremental Build of configuration Debug for project Driver_Dev ****
 make -j12 all 
 arm-none-eabi-size  Driver_Dev.elf 
    text	   data	    bss	    dec	    hex	filename
-   1572	      0	   1568	   3140	    c44	Driver_Dev.elf
+   1852	      0	   1568	   3420	    d5c	Driver_Dev.elf
 Finished building: default.size.stdout
+ 
+15:59:58 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:44:25: warning: variable 'LED_stat' set but not used [-Wunused-but-set-variable]
+   44 |                 uint8_t LED_stat = 0 ;
+      |                         ^~~~~~~~
+../Src/Button_press_toggle_led.c: At top level:
+../Src/Button_press_toggle_led.c:37:14: warning: 'delay' defined but not used [-Wunused-function]
+   37 |         void delay (void )
+      |              ^~~~~
+arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Driver_Dev.elf
+ 
+arm-none-eabi-size  Driver_Dev.elf 
+arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
+   text	   data	    bss	    dec	    hex	filename
+   1840	      0	   1568	   3408	    d50	Driver_Dev.elf
+Finished building: default.size.stdout
+ 
+Finished building: Driver_Dev.list
+ 
+16:00:40 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c:37:14: warning: 'delay' defined but not used [-Wunused-function]
+   37 |         void delay (void )
+      |              ^~~~~
+arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Driver_Dev.elf
+ 
+arm-none-eabi-size  Driver_Dev.elf 
+arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
+   text	   data	    bss	    dec	    hex	filename
+   1844	      0	   1568	   3412	    d54	Driver_Dev.elf
+Finished building: default.size.stdout
+ 
+Finished building: Driver_Dev.list
+ 
+16:05:13 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c:72:1: error: expected identifier or '(' before '}' token
+   72 | }
+      | ^
+make: *** [Src/subdir.mk:25: Src/Button_press_toggle_led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:05:39 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Driver_Dev.elf
+ 
+arm-none-eabi-size  Driver_Dev.elf 
+arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
+   text	   data	    bss	    dec	    hex	filename
+   1840	      0	   1568	   3408	    d50	Driver_Dev.elf
+Finished building: default.size.stdout
+ 
+Finished building: Driver_Dev.list
+ 
+16:10:28 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Driver_Dev.elf
+ 
+arm-none-eabi-size  Driver_Dev.elf 
+arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
+   text	   data	    bss	    dec	    hex	filename
+   1868	      0	   1568	   3436	    d6c	Driver_Dev.elf
+Finished building: default.size.stdout
+ 
+Finished building: Driver_Dev.list
+ 
+20:31:06 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:43:17: error: 'BTN1_STATE' undeclared (first use in this function)
+   43 |                 BTN1_STATE =GPIO_ReadFromInputPin(GPIOC,GPIO_PIN_NO_13)
+      |                 ^~~~~~~~~~
+../Src/Button_press_toggle_led.c:43:17: note: each undeclared identifier is reported only once for each function it appears in
+../Src/Button_press_toggle_led.c:43:72: error: expected ';' before 'if'
+   43 |                 BTN1_STATE =GPIO_ReadFromInputPin(GPIOC,GPIO_PIN_NO_13)
+      |                                                                        ^
+      |                                                                        ;
+   44 |                 if (BTN1_STATE==0 && previous_btn1_state==1)
+      |                 ~~                                                      
+../Src/Button_press_toggle_led.c:40:17: warning: unused variable 'previous_btn1_state' [-Wunused-variable]
+   40 |         uint8_t previous_btn1_state= 1;
+      |                 ^~~~~~~~~~~~~~~~~~~
+../Src/Button_press_toggle_led.c:39:17: warning: unused variable 'LED_stat' [-Wunused-variable]
+   39 |         uint8_t LED_stat = 0;   // declare once, outside loop
+      |                 ^~~~~~~~
+make: *** [Src/subdir.mk:25: Src/Button_press_toggle_led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:31:54 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:44:17: error: expected ',' or ';' before 'if'
+   44 |                 if (BTN1_STATE==0 && previous_btn1_state==1)
+      |                 ^~
+../Src/Button_press_toggle_led.c:43:25: warning: unused variable 'BTN1_STATE' [-Wunused-variable]
+   43 |                 uint8_t BTN1_STATE =GPIO_ReadFromInputPin(GPIOC,GPIO_PIN_NO_13)
+      |                         ^~~~~~~~~~
+../Src/Button_press_toggle_led.c:40:17: warning: unused variable 'previous_btn1_state' [-Wunused-variable]
+   40 |         uint8_t previous_btn1_state= 1;
+      |                 ^~~~~~~~~~~~~~~~~~~
+../Src/Button_press_toggle_led.c:39:17: warning: unused variable 'LED_stat' [-Wunused-variable]
+   39 |         uint8_t LED_stat = 0;   // declare once, outside loop
+      |                 ^~~~~~~~
+make: *** [Src/subdir.mk:25: Src/Button_press_toggle_led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:32:23 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:47:47: error: 'GIOA' undeclared (first use in this function); did you mean 'GPIOA'?
+   47 |                         GPIO_WriteToOutputPin(GIOA,GPIO_PIN_NO_5,LED_stat);
+      |                                               ^~~~
+      |                                               GPIOA
+../Src/Button_press_toggle_led.c:47:47: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:25: Src/Button_press_toggle_led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:32:42 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:47:47: error: 'GpIOA' undeclared (first use in this function); did you mean 'GPIOA'?
+   47 |                         GPIO_WriteToOutputPin(GpIOA,GPIO_PIN_NO_5,LED_stat);
+      |                                               ^~~~~
+      |                                               GPIOA
+../Src/Button_press_toggle_led.c:47:47: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:25: Src/Button_press_toggle_led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:32:51 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Driver_Dev.elf
+ 
+arm-none-eabi-size  Driver_Dev.elf 
+arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
+   text	   data	    bss	    dec	    hex	filename
+   1860	      0	   1568	   3428	    d64	Driver_Dev.elf
+Finished building: default.size.stdout
+ 
+Finished building: Driver_Dev.list
+ 
+20:34:18 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:55:9: error: expected declaration or statement at end of input
+   55 |         }
+      |         ^
+make: *** [Src/subdir.mk:25: Src/Button_press_toggle_led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:34:50 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+../Src/Button_press_toggle_led.c: In function 'main':
+../Src/Button_press_toggle_led.c:56:9: error: expected declaration or statement at end of input
+   56 |         }
+      |         ^
+make: *** [Src/subdir.mk:25: Src/Button_press_toggle_led.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+20:35:01 **** Incremental Build of configuration Debug for project Driver_Dev ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/Button_press_toggle_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -c -I../Inc -I"C:/Users/My PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/First_example/Driver_Dev/Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/Button_press_toggle_led.d" -MT"Src/Button_press_toggle_led.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/Button_press_toggle_led.o"
+arm-none-eabi-gcc -o "Driver_Dev.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\Driver_Dev\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Driver_Dev.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Driver_Dev.elf
+ 
+arm-none-eabi-size  Driver_Dev.elf 
+arm-none-eabi-objdump -h -S Driver_Dev.elf  > "Driver_Dev.list"
+   text	   data	    bss	    dec	    hex	filename
+   1864	      0	   1568	   3432	    d68	Driver_Dev.elf
+Finished building: default.size.stdout
+ 
+Finished building: Driver_Dev.list
  

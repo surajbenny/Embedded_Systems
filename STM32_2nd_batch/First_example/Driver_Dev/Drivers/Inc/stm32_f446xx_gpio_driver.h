@@ -64,6 +64,9 @@ typedef struct {
 #define GPIO_MODE_OUTPUT       1  // 01: Output mode
 #define GPIO_MODE_ALTFN        2  // 10: Alternate function mode
 #define GPIO_MODE_ANALOG       3  // 11: Analog mode
+#define GPIO_MODE_IT_FT        4   /* Interrupt mode: trigger on Falling edge (1→0 transition) */
+#define GPIO_MODE_IT_RT        5   /* Interrupt mode: trigger on Rising edge (0→1 transition) */
+#define GPIO_MODE_IT_RFT       6   /* Interrupt mode: trigger on both Rising and Falling edges */
 
 
 
