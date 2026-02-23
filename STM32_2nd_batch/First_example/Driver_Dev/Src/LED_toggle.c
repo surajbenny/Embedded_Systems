@@ -13,7 +13,7 @@ void delay(void){
 	for(uint32_t i=0;i<500000;i++);
 }
 
-int main (void){
+int main1 (void){
 	GPIO_Handle_t GPIO_LED;
 	GPIO_LED.pGPIOx = GPIOA;
 	GPIO_LED.GPIO_PinConfig.GPIO_PinNumber= GPIO_PIN_NO_5;

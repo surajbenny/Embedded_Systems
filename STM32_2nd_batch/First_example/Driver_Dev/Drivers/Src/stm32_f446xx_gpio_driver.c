@@ -148,6 +148,17 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 		}
 	}
 
+	// 2. configure the GPIO port selection in SYSCFG EXTICR
+	uint8_t temp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
+	uint8_t temp2 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 4;
+	uint8_t portcode = GPIO_BASEADDR_TO_CODE(pGPIOHandle->pGPIOx);
+
+	SYSCFG_PCLK_EN();
+
+	SYSCFG->EXTICR[temp1] = portcode << (temp2 * 4);
+
+
+
 	//2 Configure speed
 	temp = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed) << (2*pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber); //to create a temp mask
 	(pGPIOHandle->pGPIOx->OSPEEDER) &= ~(0x03 << (2*pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)); // to clear the register
@@ -252,3 +263,48 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 	(pGPIOx->ODR) ^= (1<<PinNumber);
 
 }
+
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
+{
+    if(EnorDi == ENABLE)
+    {
+        if(IRQNumber <= 31)
+        {
+            // program ISER0 register
+            NVIC_ISER0 |= (1 << IRQNumber);
+        }
+        else if(IRQNumber > 31 && IRQNumber < 64) // 32 to 63
+        {
+            // program ISER1 register
+            NVIC_ISER1 |= (1 << (IRQNumber % 32));
+        }
+        else if(IRQNumber >= 64 && IRQNumber < 96) // 64 to 95
+        {
+            // program ISER2 register
+            NVIC_ISER2 |= (1 << (IRQNumber % 64));
+        }
+    }
+    else
+    {
+        if(IRQNumber <= 31)
+        {
+            // program ICER0 register
+            NVIC_ICER0 |= (1 << IRQNumber);
+        }
+        // (rest of disabling logic continues for ICER1, ICER2, etc.)
+    }
+}
+
+
+
+void GPIO_IRQHandling(uint8_t PinNumber)
+{
+    // Clear the EXTI pending register corresponding to the pin number
+    if (EXTI->PR & (1 << PinNumber))
+    {
+        // Clear by writing '1' to the bit
+        EXTI->PR |= (1 << PinNumber);
+    }
+}
+
+

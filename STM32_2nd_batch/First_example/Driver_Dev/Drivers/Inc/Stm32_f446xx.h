@@ -14,6 +14,7 @@
 
 
 
+
 /* ARM Cortex NVIC Processor NVIC ISERx register Addresses */
 #define NVIC_ISER0 (*(volatile uint32_t*)0xE000E100)
 #define NVIC_ISER1 (*(volatile uint32_t*)0xE000E104)
@@ -153,6 +154,15 @@ typedef struct
 }GPIO_RegDef_t;
 
 
+// IRQ numbers for EXTI lines
+#define IRQ_NO_EXTI0        6
+#define IRQ_NO_EXTI1        7
+#define IRQ_NO_EXTI2        8
+#define IRQ_NO_EXTI3        9
+#define IRQ_NO_EXTI4        10
+#define IRQ_NO_EXTI9_5      23
+#define IRQ_NO_EXTI15_10    40
+
 #define GPIOA 			(GPIO_RegDef_t *)(GPIOA_PERIPH_BASEADDR)
 #define GPIOB 			(GPIO_RegDef_t *)(GPIOB_PERIPH_BASEADDR)
 #define GPIOC 			(GPIO_RegDef_t *)(GPIOC_PERIPH_BASEADDR)
@@ -232,6 +242,7 @@ typedef struct
 } SYSCFG_RegDef_t;
 
 #define EXTI 			((EXTI_RegDef_t*)EXTI_BASEADDR)
+#define SYSCFG 			((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
 
 #define RCC				 ((RCC_RegDef_t*)RCC_PERIPH_BASEADDR)
 
@@ -274,6 +285,20 @@ typedef struct
 #define SPI4_PCLK_DI()              (RCC->APB2ENR)&=~(1<<13)
 #define SPI2_PCLK_DI()              (RCC->APB1ENR)&=~(1<<14)
 #define SPI3_PCLK_DI()              (RCC->APB1ENR)&=~(1<<15)
+
+
+/* Clock Enable Macros for SYSCFG peripheral */
+#define SYSCFG_PCLK_EN() (RCC->APB2ENR |= (1 << 14))
+
+/* This macro returns a code (between 0 to 7) for a given GPIO base address(x) */
+#define GPIO_BASEADDR_TO_CODE(x)    ((x == GPIOA)?0:\
+                                    (x == GPIOB)?1:\
+                                    (x == GPIOC)?2:\
+                                    (x == GPIOD)?3:\
+                                    (x == GPIOE)?4:\
+                                    (x == GPIOF)?5:\
+                                    (x == GPIOG)?6:\
+                                    (x == GPIOH)?7:0)
 
 /*
  * Clock enable and disable macros for I2C
