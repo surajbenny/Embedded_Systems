@@ -1,0 +1,2 @@
+../Src/interupt.c:10:5:main	32	static
+../Src/interupt.c:44:6:EXTI15_10_IRQHandler	8	static
