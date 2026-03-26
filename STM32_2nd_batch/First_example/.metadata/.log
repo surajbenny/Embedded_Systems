@@ -517,3 +517,91 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-02-22 13:23:35.877
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-03-05 13:41:24.183 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-03-05 13:41:30.169
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-05 13:41:35.594
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-05 13:41:35.596
+!MESSAGE Log4j2 initialized with config file C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-05 13:41:43.000
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-03-26 13:44:10.499 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\LED_Push_button\Driver_Dev\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\LED_Push_button\Driver_Dev\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-26 13:44:24.022
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-26 13:44:24.025
+!MESSAGE Log4j2 initialized with config file C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-26 13:44:35.935
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 368 2026-03-26 13:44:43.743
+!MESSAGE Resource '/Driver_Dev' does not exist.
+!STACK 0
+java.lang.Exception: Resource '/Driver_Dev' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:364)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1069)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1192)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporter$ProjectOperation.execute(MCUProjectImporter.java:189)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-26 13:44:44.913
+!MESSAGE Indexed 'Driver_Dev' (4 sources, 24 headers) in 0.64 sec: 520 declarations; 1,473 references; 10 unresolved inclusions; 0 syntax errors; 118 unresolved names (5.6%)
+
+!ENTRY org.eclipse.core.resources 4 368 2026-03-26 13:51:18.182
+!MESSAGE Resource '/Driver_Dev' does not exist.
+!STACK 0
+java.lang.Exception: Resource '/Driver_Dev' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:364)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1069)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1192)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporter$ProjectOperation.execute(MCUProjectImporter.java:189)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-26 13:51:19.850
+!MESSAGE Indexed 'Driver_Dev' (6 sources, 60 headers) in 1.07 sec: 2,459 declarations; 4,286 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.03%)
+!SESSION 2026-03-26 13:52:46.699 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\LED_Push_button\Driver_Dev\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\LED_Push_button\Driver_Dev\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-03-26 13:53:00.949
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-26 13:53:00.951
+!MESSAGE Log4j2 initialized with config file C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_2nd_batch\First_example\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-26 13:53:09.431
+!MESSAGE Started RMI Server, listening on port 41337
