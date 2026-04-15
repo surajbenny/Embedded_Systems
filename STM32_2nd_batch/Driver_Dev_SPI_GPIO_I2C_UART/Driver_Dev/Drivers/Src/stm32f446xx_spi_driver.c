@@ -82,6 +82,24 @@ void SPI_Init(SPI_Handle_t *pSPIHandle)
 		tempreg |= ( 1 << SPI_CR1_RXONLY);
 	}
 
+	// 3. Configure the spi serial clock speed (baud rate)
+	tempreg |= pSPIHandle->SPIConfig.SPI_SclkSpeed << SPI_CR1_BR;
+
+	//4.  Configure the DFF
+	tempreg |= pSPIHandle->SPIConfig.SPI_DFF << SPI_CR1_DFF;
+
+	//5. configure the CPOL
+	tempreg |= pSPIHandle->SPIConfig.SPI_CPOL << SPI_CR1_CPOL;
+
+	//6 . configure the CPHA
+	tempreg |= pSPIHandle->SPIConfig.SPI_CPHA << SPI_CR1_CPHA;
+
+	tempreg |= pSPIHandle->SPIConfig.SPI_SSM << SPI_CR1_SSM;
+
+	pSPIHandle->pSPIx->CR1 = tempreg;
+
+
+
 
 
 
@@ -93,5 +111,42 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 
 }
 
-void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint8_t Len);
+
+uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx , uint32_t FlagName)
+{
+	if(pSPIx->SR & FlagName)
+	{
+		return FLAG_SET;
+	}
+	return FLAG_RESET;
+}
+
+
+void SPI_SendData(SPI_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len)
+{
+	while(Len > 0)
+	{
+		//1. wait until TXE is set (check chatgpt if needed)
+		while(SPI_GetFlagStatus(pSPIx,SPI_TXE_FLAG)  == FLAG_RESET );
+
+		//2. check the DFF bit in CR1
+		if( (pSPIx->CR1 & ( 1 << SPI_CR1_DFF) ) )
+		{
+			//16 bit DFF
+			//1. load the data in to the DR
+			pSPIx->DR =   *((uint16_t*)pTxBuffer);
+			Len--;
+			Len--;
+			(uint16_t*)pTxBuffer++;
+		}else
+		{
+			//8 bit DFF
+			pSPIx->DR =   *pTxBuffer;
+			Len--;
+			pTxBuffer++;
+		}
+	}
+
+}
+
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint8_t Len);

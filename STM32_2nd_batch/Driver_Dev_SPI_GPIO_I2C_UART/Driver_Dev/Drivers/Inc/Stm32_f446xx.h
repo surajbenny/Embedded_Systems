@@ -216,8 +216,21 @@ typedef struct
 #define GPIOH_PCLK_DI()            (RCC->AHB1ENR)&=~(1<<7)
 
 
-#define ENABLE                     1
-#define DISABLE					   0
+
+
+
+/**********************************Generic Macros **********************************/
+
+#define ENABLE                              1
+#define DISABLE                             0
+#define SET                                 ENABLE
+#define RESET                               DISABLE
+#define GPIO_PIN_SET                        SET
+#define GPIO_PIN_RESET                      RESET
+#define FLAG_RESET                          RESET
+#define FLAG_SET                            SET
+
+
 
 /*
  * Clock enable and disable macros for SPI
@@ -359,6 +372,11 @@ typedef struct
 #define UART5_REG_RESET()                   do{ (RCC->APB1RSTR |= (1 << 20)); (RCC->APB1RSTR &= ~(1 << 20)); }while(0)
 #define USART6_REG_RESET()                  do{ (RCC->APB2RSTR |= (1 << 5)); (RCC->APB2RSTR &= ~(1 << 5)); }while(0)
 
+
+/******************************************************************************************
+ * Bit position definitions of SPI peripheral
+ ******************************************************************************************/
+
 /*
  * Bit position definitions SPI_CR1
  */
@@ -378,6 +396,18 @@ typedef struct
 #define SPI_CR1_BIDIMODE                    15
 
 
+/*
+ * Bit position definitions SPI_SR
+ */
+#define SPI_SR_RXNE                         0
+#define SPI_SR_TXE                          1
+#define SPI_SR_CHSIDE                       2
+#define SPI_SR_UDR                          3
+#define SPI_SR_CRCERR                       4
+#define SPI_SR_MODF                         5
+#define SPI_SR_OVR                          6
+#define SPI_SR_BSY                          7
+#define SPI_SR_FRE                          8
 
 
 #endif /* INC_STM32_F446XX_H_ */
