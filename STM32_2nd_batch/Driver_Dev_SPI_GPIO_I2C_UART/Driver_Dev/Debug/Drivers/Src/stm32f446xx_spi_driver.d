@@ -1,0 +1,6 @@
+Drivers/Src/stm32f446xx_spi_driver.o: \
+ ../Drivers/Src/stm32f446xx_spi_driver.c \
+ C:/Users/My\ PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/Driver_Dev_SPI_GPIO_I2C_UART/Driver_Dev/Drivers/Inc/stm32f446xx_spi_driver.h \
+ C:/Users/My\ PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/Driver_Dev_SPI_GPIO_I2C_UART/Driver_Dev/Drivers/Inc/Stm32_f446xx.h
+C:/Users/My\ PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/Driver_Dev_SPI_GPIO_I2C_UART/Driver_Dev/Drivers/Inc/stm32f446xx_spi_driver.h:
+C:/Users/My\ PC/Documents/New_EM/Embedded_Systems/STM32_2nd_batch/Driver_Dev_SPI_GPIO_I2C_UART/Driver_Dev/Drivers/Inc/Stm32_f446xx.h:
