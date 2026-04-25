@@ -1,0 +1,10 @@
+{
+  "idf.currentSetup": "c:\\esp\\v5.5.2\\esp-idf",
+  "C_Cpp.errorSquiggles": "enabled",
+  "clangd.path": "c:\\espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=c:\\ESP32\\Codes\\build"
+  ]
+}

@@ -1,0 +1,2 @@
+source C:/ESP32/Codes/PushButtonLED/build/gdbinit/symbols
+source C:/ESP32/Codes/PushButtonLED/build/gdbinit/connect

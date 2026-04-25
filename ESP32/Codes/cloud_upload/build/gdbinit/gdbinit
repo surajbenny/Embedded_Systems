@@ -1,0 +1,2 @@
+source C:/ESP32/Codes/cloud_upload/build/gdbinit/symbols
+source C:/ESP32/Codes/cloud_upload/build/gdbinit/connect
