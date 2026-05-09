@@ -62,12 +62,13 @@ int main()
     printf("Enter base (2 to 16): ");
     scanf("%d", &b);
 
-    if(b <=2 && b>=16)
+    if(b <=2 || b>=16)
     {
         printf("Invalid base");
+        return 0;
     }
     
-    
+
     printf("Converted value: ");
     decimal_to_base(n,b);
     
