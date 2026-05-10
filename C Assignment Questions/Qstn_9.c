@@ -25,11 +25,6 @@ float add(float a, float b)
 
 float div(float a, float b)
 {
-    if(b==0)
-    {
-        printf("zero division not allowed\n");
-        return 0;
-    }
     return a/b;
 }
 
@@ -77,6 +72,12 @@ int main()
 
     printf("Enter second number: ");
     scanf("%f", &num2);
+
+    if(op == '/' && num2 == 0)
+    {
+        printf(" division by zero is invalid");
+        return 0;
+    }
 
     result = calculate(num1, num2, op);
 
