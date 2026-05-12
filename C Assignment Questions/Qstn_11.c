@@ -22,7 +22,7 @@ int main()
     printf("Enter a whole number: ");
     scanf("%d",&num);
 
-    // number zero comes
+    // if number zero comes
     if(num == 0)
     {
         str[i] = '0';
@@ -45,13 +45,16 @@ int main()
         temp= temp/10;
         i++;
     }
-   
+    
+    // adding -ve char if input is niegative
     if (isNegative)
     {
         str[i] = '-';
         i++;
     }
 
+
+    
     str[i]= '\0';
 
     int start =0, end = i-1;
