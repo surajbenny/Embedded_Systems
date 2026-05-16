@@ -27,7 +27,7 @@ void delay_1sec()
 	{
 		
 	TCNT0 = 0;	
-	TIFR0 = (1<<TOV0);    //MAKING OVERFLOW FALG 0	in atmega only
+	TIFR0 = (1<<TOV0);    //TIFR0 = (1<<TOV0); Clear overflow flag
 	TCCR0A = 0;
 	TCCR0B = (1<<CS00);	
 	
