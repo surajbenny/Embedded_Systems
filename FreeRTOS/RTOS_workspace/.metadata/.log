@@ -1,0 +1,24 @@
+!SESSION 2026-05-29 17:37:21.323 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-05-29 17:37:39.991
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-29 17:37:39.994
+!MESSAGE Log4j2 initialized with config file C:\Users\My PC\Documents\New_EM\Embedded_Systems\FreeRTOS\RTOS_workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-29 17:37:44.257
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-29 17:43:37.615
+!MESSAGE Indexed 'RTOS1' (20 sources, 82 headers) in 4.47 sec: 5,034 declarations; 26,554 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0063%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-29 18:39:41.688
+!MESSAGE Indexed 'RTOS1' (29 sources, 99 headers) in 1.89 sec: 6,662 declarations; 33,472 references; 1 unresolved inclusions; 8 syntax errors; 16 unresolved names (0.04%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-29 18:46:03.564
+!MESSAGE Indexed 'RTOS1' (29 sources, 100 headers) in 1.58 sec: 7,111 declarations; 37,260 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0045%)
