@@ -21,6 +21,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "FreeRTOS.h"
+#include "task.h"
+#include<stdio.h>
+
 
 /* USER CODE END Includes */
 
@@ -51,7 +55,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+static void task1_handler (void * pvParameters);
+static void task2_handler (void * pvParameters);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -67,7 +72,9 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	TaskHandle_t task1_handle;
+	TaskHandle_t task2_handle;
+	BaseType_t xReturned;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -90,6 +97,29 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+
+  xReturned = xTaskCreate(
+		  	  	  task1_handler,       /* Function that implements the task. */
+                  "TASK1",          /* Text name for the task. */
+                  100,      /* Stack size in words, not bytes. */
+                  "Hello from task1",    /* Parameter passed into the task. */
+                   2,/* Priority at which the task is created. */
+                  &task1_handle );      /* Used to pass out the created task's handle. */
+
+  configASSERT(xReturned == pdPASS);
+
+
+  xReturned = xTaskCreate(
+		  	  	  task2_handler,       /* Function that implements the task. */
+                  "TASK2",          /* Text name for the task. */
+                  100,      /* Stack size in words, not bytes. */
+                  "Hello from task2",    /* Parameter passed into the task. */
+                   2,/* Priority at which the task is created. */
+                  &task2_handle );      /* Used to pass out the created task's handle. */
+
+  configASSERT(xReturned == pdPASS);
+
+   vTaskStartScheduler();
 
   /* USER CODE END 2 */
 
@@ -224,6 +254,25 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+static void task1_handler(void* parameters)
+{
+	while(1)
+	{
+		printf("%s\n",(char*)parameters);
+		taskYIELD();
+	}
+
+}
+
+static void task2_handler(void* parameters)
+{
+	while(1)
+	{
+		printf("%s\n",(char*)parameters);
+		taskYIELD();
+	}
+
+}
 
 /* USER CODE END 4 */
 
