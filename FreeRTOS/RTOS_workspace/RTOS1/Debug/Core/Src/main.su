@@ -1,8 +1,9 @@
-../Core/Src/main.c:71:5:main	40	static,ignoring_inline_asm
-../Core/Src/main.c:141:6:SystemClock_Config	88	static
-../Core/Src/main.c:189:13:MX_USART2_UART_Init	8	static
-../Core/Src/main.c:222:13:MX_GPIO_Init	48	static
-../Core/Src/main.c:257:13:task1_handler	16	static,ignoring_inline_asm
-../Core/Src/main.c:267:13:task2_handler	16	static,ignoring_inline_asm
-../Core/Src/main.c:287:6:HAL_TIM_PeriodElapsedCallback	16	static
-../Core/Src/main.c:305:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:72:5:main	48	static,ignoring_inline_asm
+../Core/Src/main.c:155:6:SystemClock_Config	88	static
+../Core/Src/main.c:203:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:236:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:271:13:LED_GREEN_handler	16	static,ignoring_inline_asm
+../Core/Src/main.c:283:13:LED_RED_handler	16	static,ignoring_inline_asm
+../Core/Src/main.c:297:13:LED_BLUE_handler	16	static,ignoring_inline_asm
+../Core/Src/main.c:319:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:337:6:Error_Handler	4	static,ignoring_inline_asm

@@ -55,8 +55,9 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
-static void task1_handler (void * pvParameters);
-static void task2_handler (void * pvParameters);
+static void LED_GREEN_handler (void * pvParameters);
+static void LED_RED_handler (void * pvParameters);
+static void LED_BLUE_handler (void * pvParameters);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -74,6 +75,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	TaskHandle_t task1_handle;
 	TaskHandle_t task2_handle;
+	TaskHandle_t task3_handle;
 	BaseType_t xReturned;
   /* USER CODE END 1 */
 
@@ -99,25 +101,37 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   xReturned = xTaskCreate(
-		  	  	  task1_handler,       /* Function that implements the task. */
-                  "TASK1",          /* Text name for the task. */
+		  	  	  LED_GREEN_handler,       /* Function that implements the task. */
+                  "Green led task",          /* Text name for the task. */
                   100,      /* Stack size in words, not bytes. */
-                  "Hello from task1",    /* Parameter passed into the task. */
+                  NULL,    /* Parameter passed into the task. */
                    2,/* Priority at which the task is created. */
                   &task1_handle );      /* Used to pass out the created task's handle. */
 
   configASSERT(xReturned == pdPASS);
 
-
   xReturned = xTaskCreate(
-		  	  	  task2_handler,       /* Function that implements the task. */
-                  "TASK2",          /* Text name for the task. */
+		  	  	  LED_RED_handler,       /* Function that implements the task. */
+                  "Red led task",          /* Text name for the task. */
                   100,      /* Stack size in words, not bytes. */
-                  "Hello from task2",    /* Parameter passed into the task. */
+                  NULL,    /* Parameter passed into the task. */
                    2,/* Priority at which the task is created. */
                   &task2_handle );      /* Used to pass out the created task's handle. */
 
   configASSERT(xReturned == pdPASS);
+
+  xReturned = xTaskCreate(
+		  	  	  LED_BLUE_handler,       /* Function that implements the task. */
+                  "Blue led task",          /* Text name for the task. */
+                  100,      /* Stack size in words, not bytes. */
+                  NULL,    /* Parameter passed into the task. */
+                   2,/* Priority at which the task is created. */
+                  &task3_handle );      /* Used to pass out the created task's handle. */
+
+  configASSERT(xReturned == pdPASS);
+     /* Used to pass out the created task's handle. */
+
+
 
    vTaskStartScheduler();
 
@@ -233,7 +247,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GREEN_LED_Pin|BLUE_LED_Pin|RED_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -241,12 +255,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
+  /*Configure GPIO pins : GREEN_LED_Pin BLUE_LED_Pin RED_LED_Pin */
+  GPIO_InitStruct.Pin = GREEN_LED_Pin|BLUE_LED_Pin|RED_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
@@ -254,21 +268,39 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-static void task1_handler(void* parameters)
+static void LED_GREEN_handler(void* parameters)
 {
 	while(1)
 	{
-		printf("%s\n",(char*)parameters);
+		printf("task1\n");
+		HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port,GREEN_LED_Pin);
+		HAL_Delay(1000);
 		taskYIELD();
 	}
 
 }
 
-static void task2_handler(void* parameters)
+static void LED_RED_handler(void* parameters)
 {
 	while(1)
 	{
-		printf("%s\n",(char*)parameters);
+		printf("task2\n");
+		HAL_GPIO_TogglePin(RED_LED_GPIO_Port,RED_LED_Pin);
+		HAL_Delay(800);
+		taskYIELD();
+	}
+
+}
+
+
+
+static void LED_BLUE_handler(void* parameters)
+{
+	while(1)
+	{
+		printf("task3\n");
+		HAL_GPIO_TogglePin(BLUE_LED_GPIO_Port,BLUE_LED_Pin);
+		HAL_Delay(500);
 		taskYIELD();
 	}
 
