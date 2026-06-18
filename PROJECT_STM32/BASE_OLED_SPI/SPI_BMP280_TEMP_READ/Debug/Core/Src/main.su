@@ -1,0 +1,12 @@
+../Core/Src/main.c:68:6:BMP280_writeReg	24	static
+../Core/Src/main.c:80:6:BMP280_ReadChip_id	64	static
+../Core/Src/main.c:102:6:BMP280_ReadRegs	24	static
+../Core/Src/main.c:114:9:BMP280_ReadTempADC	16	static
+../Core/Src/main.c:132:6:BMP280_ReadCalibration	16	static
+../Core/Src/main.c:147:7:BMP280_CompensateTemp	24	static
+../Core/Src/main.c:172:5:main	80	static
+../Core/Src/main.c:247:6:SystemClock_Config	88	static
+../Core/Src/main.c:295:13:MX_SPI1_Init	8	static
+../Core/Src/main.c:333:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:366:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:408:6:Error_Handler	4	static,ignoring_inline_asm

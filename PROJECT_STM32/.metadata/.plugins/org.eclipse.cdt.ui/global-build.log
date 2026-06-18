@@ -1,0 +1,829 @@
+01:02:00 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-size  I2C_OLED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24592	     92	   3260	  27944	   6d28	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+01:02:16 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-size  I2C_OLED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24592	     92	   3260	  27944	   6d28	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+01:04:14 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24592	     92	   3260	  27944	   6d28	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:05:05 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24592	     92	   3260	  27944	   6d28	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:08:17 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24592	     92	   3260	  27944	   6d28	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:09:05 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24592	     92	   3260	  27944	   6d28	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:09:43 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24592	     92	   3260	  27944	   6d28	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:13:20 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24596	     92	   3260	  27948	   6d2c	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:13:56 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24600	     92	   3260	  27952	   6d30	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:14:20 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-size  I2C_OLED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24600	     92	   3260	  27952	   6d30	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+01:14:35 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24600	     92	   3260	  27952	   6d30	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:15:21 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24600	     92	   3260	  27952	   6d30	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:18:06 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-size  I2C_OLED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24600	     92	   3260	  27952	   6d30	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+01:18:27 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24596	     92	   3260	  27948	   6d2c	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:29:53 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24684	     92	   3260	  28036	   6d84	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:32:07 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24704	     92	   3260	  28056	   6d98	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:35:20 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24744	     92	   3260	  28096	   6dc0	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:37:21 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24696	     92	   3260	  28048	   6d90	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:40:35 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:229:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  229 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:229:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  18440	     12	   2924	  21376	   5380	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:42:40 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:229:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  229 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:229:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  18432	     12	   2924	  21368	   5378	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:48:57 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24696	     92	   3260	  28048	   6d90	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:58:21 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24744	     92	   3260	  28096	   6dc0	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+01:59:21 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24744	     92	   3260	  28096	   6dc0	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+02:03:38 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  26264	     92	   3260	  29616	   73b0	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+02:04:05 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  25792	     92	   3260	  29144	   71d8	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+02:04:30 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  25792	     92	   3260	  29144	   71d8	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+02:05:00 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  25792	     92	   3260	  29144	   71d8	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+02:05:39 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:234:42: error: 'Font_' undeclared (first use in this function)
+  234 |                 ssd1306_WriteString(msg, Font_, White);
+      |                                          ^~~~~
+../Core/Src/main.c:234:42: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+02:05:57 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24364	     92	   3260	  27716	   6c44	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
+02:06:55 **** Incremental Build of configuration Debug for project I2C_OLED ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BMP280_ReadChip_id':
+../Core/Src/main.c:98:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:27:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   26 | #include <string.h>
+  +++ |+#include <stdio.h>
+   27 | /* USER CODE END Includes */
+../Core/Src/main.c:98:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   98 |         sprintf(arr,"ID=%X\r\n",chip_id);
+      |         ^~~~~~~
+../Core/Src/main.c:98:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:225:11: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  225 |           sprintf(msg,"Temp = %d.%02d C",temp_x100 / 100,temp_x100 % 100);
+      |           ^~~~~~~
+../Core/Src/main.c:225:11: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+arm-none-eabi-gcc -o "I2C_OLED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\My PC\Documents\New_EM\Embedded_Systems\STM32_NEW_WORKSPACE\I2C_OLED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_OLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_OLED.elf
+ 
+arm-none-eabi-size  I2C_OLED.elf 
+arm-none-eabi-objdump -h -S I2C_OLED.elf  > "I2C_OLED.list"
+   text	   data	    bss	    dec	    hex	filename
+  24744	     92	   3260	  28096	   6dc0	I2C_OLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_OLED.list
+ 
