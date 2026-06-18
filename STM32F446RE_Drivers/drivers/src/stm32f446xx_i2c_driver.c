@@ -6,6 +6,7 @@
 
 #include "stm32f446xx_i2c_driver.h"
 #include "stm32f446xx_rcc_driver.h"
+#include "stm32f446xx_gpio_driver.h"
 
 
 static void  I2C_GenerateStartCondition(I2C_RegDef_t *pI2Cx);
@@ -256,6 +257,10 @@ void I2C_Init(I2C_Handle_t *pI2CHandle)
 
 	pI2CHandle->pI2Cx->TRISE = (tempreg & 0x3F);
 
+
+
+
+
 }
 
 
@@ -297,7 +302,8 @@ void I2C_MasterSendData(I2C_Handle_t *pI2CHandle,uint8_t *pTxbuffer, uint32_t Le
 
 	//2. confirm that start generation is completed by checking the SB flag in the SR1
 	//   Note: Until SB is cleared SCL will be stretched (pulled to LOW)
-	while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
+
+    while( !  I2C_GetFlagStatus(pI2CHandle->pI2Cx,I2C_FLAG_SB)   );
 
 	//3. Send the address of the slave with r/nw bit set to w(0) (total 8 bits )
 	I2C_ExecuteAddressPhaseWrite(pI2CHandle->pI2Cx,SlaveAddr);

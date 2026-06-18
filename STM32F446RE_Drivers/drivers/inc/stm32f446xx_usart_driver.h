@@ -40,13 +40,7 @@ typedef struct
 
 
 
-/*
- *@USART_Mode
- *Possible options for USART_Mode
- */
-#define USART_MODE_ONLY_TX 	0
-#define USART_MODE_ONLY_RX 	1
-#define USART_MODE_TXRX  	2
+
 
 /*
  *@USART_Baud
@@ -67,6 +61,35 @@ typedef struct
 
 
 /*
+ *@USART_HWFlowControl
+ *Possible options for USART_HWFlowControl
+ */
+#define USART_HW_FLOW_CTRL_NONE    	0
+#define USART_HW_FLOW_CTRL_CTS    	1
+#define USART_HW_FLOW_CTRL_RTS    	2
+#define USART_HW_FLOW_CTRL_CTS_RTS	3
+
+
+
+/*
+ *@USART_Mode
+ *Possible options for USART_Mode
+ */
+#define USART_MODE_ONLY_TX 	0
+#define USART_MODE_ONLY_RX 	1
+#define USART_MODE_TXRX  	2
+
+
+/*
+ *@USART_NoOfStopBits
+ *Possible options for USART_NoOfStopBits
+ */
+#define USART_STOPBITS_1     0
+#define USART_STOPBITS_0_5   1
+#define USART_STOPBITS_2     2
+#define USART_STOPBITS_1_5   3
+
+/*
  *@USART_ParityControl
  *Possible options for USART_ParityControl
  */
@@ -81,24 +104,8 @@ typedef struct
 #define USART_WORDLEN_8BITS  0
 #define USART_WORDLEN_9BITS  1
 
-/*
- *@USART_NoOfStopBits
- *Possible options for USART_NoOfStopBits
- */
-#define USART_STOPBITS_1     0
-#define USART_STOPBITS_0_5   1
-#define USART_STOPBITS_2     2
-#define USART_STOPBITS_1_5   3
 
 
-/*
- *@USART_HWFlowControl
- *Possible options for USART_HWFlowControl
- */
-#define USART_HW_FLOW_CTRL_NONE    	0
-#define USART_HW_FLOW_CTRL_CTS    	1
-#define USART_HW_FLOW_CTRL_RTS    	2
-#define USART_HW_FLOW_CTRL_CTS_RTS	3
 
 
 /*
@@ -164,6 +171,7 @@ void USART_IRQHandling(USART_Handle_t *pUSARTHandle);
 
 uint8_t USART_GetFlagStatus(USART_RegDef_t *pUSARTx, uint8_t StatusFlagName);
 void USART_ClearFlag(USART_RegDef_t *pUSARTx, uint16_t StatusFlagName);
+
 void USART_PeripheralControl(USART_RegDef_t *pUSARTx, uint8_t EnOrDi);
 void USART_SetBaudRate(USART_RegDef_t *pUSARTx, uint32_t BaudRate);
 
