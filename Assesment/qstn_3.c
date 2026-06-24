@@ -1,14 +1,23 @@
-#include<stdio.h>
-int main()
-{ 
-   int i,j,n=5;
+#include <stdio.h>
 
-    for(i=0;i<=n;i++)
-    {
-        for (j=0;j<i;j++)
-        {
-            printf("* ");
-        }
-        printf("\n");
-    }
+int main()
+{
+    int i,j,row=5;
+ 
+ for(i=1;i<=row;i++)
+ {
+     for(j=1;j<=row;j++)
+     {
+         if((i+j)<=row)
+         {
+             printf(" ");
+         }
+         else
+         {
+             printf("*");
+         }
+     }
+     printf("\n");
+ }
+    
 }

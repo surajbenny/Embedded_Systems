@@ -1,28 +1,40 @@
 #include<stdio.h>
-int n1,n2,i,j,flag=0;
 
-int second_largest(int arr[5])
+
+int second_largest(int arr[],int size)
 {
 
-    for (i=0;i<5;i++)
-    {
-    printf("enter the values of the arr[%d]=",i);
-    scanf("%d",arr[i]);
-    }
 
-    for (i=0;i<5;i++)
+int largest = -3000;
+int sec_larg = -3000;
+    int i;
+    for(i=0;i<size;i++)
     {
-        for(j=0;j<5;j++)
+        if (arr[i] > largest )
         {
-            if (arr[i]> arr[j])
+            sec_larg = largest;
+            largest = arr[i];
+        }
+        else if(arr[i]>sec_larg && (arr[i] != largest))
+        {
+            sec_larg = arr[i];
         }
     }
-
-
-
-int main()
-{
-    int arr[5];
-
-    second_largest();
+    
+    return sec_larg;
 }
+int main()
+{ 
+    int arr1[100],size,i;
+    
+    printf("Enter the size of array: \n");
+    scanf("%d",&size);
+    printf("Enter the elements of array: \n");
+    for(i=0;i<size;i++)
+    scanf("%d",&arr1[i]);
+    
+    int result = second_largest(arr1,size);
+    printf("Second largest = %d\n", result);
+     
+  
+    }
