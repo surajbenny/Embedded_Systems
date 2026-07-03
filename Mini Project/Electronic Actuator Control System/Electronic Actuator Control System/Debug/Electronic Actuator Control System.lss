@@ -1,0 +1,595 @@
+
+Electronic Actuator Control System.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000008  00800100  000002e2  00000356  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000002e2  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  0000035e  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000390  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000158  00000000  00000000  000003d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00001118  00000000  00000000  00000528  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000ab9  00000000  00000000  00001640  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000a41  00000000  00000000  000020f9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000218  00000000  00000000  00002b3c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000525  00000000  00000000  00002d54  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000293  00000000  00000000  00003279  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 000000f0  00000000  00000000  0000350c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e2 ee       	ldi	r30, 0xE2	; 226
+  7c:	f2 e0       	ldi	r31, 0x02	; 2
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a8 30       	cpi	r26, 0x08	; 8
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a8 e0       	ldi	r26, 0x08	; 8
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a8 30       	cpi	r26, 0x08	; 8
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 89 00 	call	0x112	; 0x112 <main>
+  9e:	0c 94 6f 01 	jmp	0x2de	; 0x2de <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <ADC_Init>:
+ */ 
+#include "ADC.h"
+
+void ADC_Init(void)
+{
+	ADMUX = (1<<REFS0);    //AVCC Reference
+  a6:	80 e4       	ldi	r24, 0x40	; 64
+  a8:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7f807c>
+	
+	// Enable ADC Prescaler 128
+
+    ADCSRA =(1<<ADEN) |(1<<ADPS2) |(1<<ADPS1) |(1<<ADPS0);
+  ac:	87 e8       	ldi	r24, 0x87	; 135
+  ae:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+  b2:	08 95       	ret
+
+000000b4 <GPIO_Init>:
+{
+	
+	//DDRB |= (1<<PB1);      //Servo Output 
+
+	// UART
+	DDRD |= (1<<PD1);
+  b4:	8a b1       	in	r24, 0x0a	; 10
+  b6:	82 60       	ori	r24, 0x02	; 2
+  b8:	8a b9       	out	0x0a, r24	; 10
+	DDRD &= ~(1<<PD0);
+  ba:	8a b1       	in	r24, 0x0a	; 10
+  bc:	8e 7f       	andi	r24, 0xFE	; 254
+  be:	8a b9       	out	0x0a, r24	; 10
+
+	DDRC &= ~(1<<PC0);     // ADC
+  c0:	87 b1       	in	r24, 0x07	; 7
+  c2:	8e 7f       	andi	r24, 0xFE	; 254
+  c4:	87 b9       	out	0x07, r24	; 7
+
+	// OLED I2c
+
+	DDRC |= (1<<PC4);
+  c6:	87 b1       	in	r24, 0x07	; 7
+  c8:	80 61       	ori	r24, 0x10	; 16
+  ca:	87 b9       	out	0x07, r24	; 7
+	DDRC |= (1<<PC5);
+  cc:	87 b1       	in	r24, 0x07	; 7
+  ce:	80 62       	ori	r24, 0x20	; 32
+  d0:	87 b9       	out	0x07, r24	; 7
+  d2:	08 95       	ret
+
+000000d4 <I2C_Init>:
+
+void I2C_Init(void)
+{
+	//SCL Frequency = 100 kHz 
+
+	TWSR = 0x00;      // Prescaler = 1
+  d4:	10 92 b9 00 	sts	0x00B9, r1	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+
+	TWBR = 72;        // 100 kHz for F_CPU = 16 MHz
+  d8:	88 e4       	ldi	r24, 0x48	; 72
+  da:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7f80b8>
+
+	TWCR = (1 << TWEN);   // Enable TWI
+  de:	84 e0       	ldi	r24, 0x04	; 4
+  e0:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+  e4:	08 95       	ret
+
+000000e6 <I2C_Start>:
+}
+
+void I2C_Start(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+  e6:	84 ea       	ldi	r24, 0xA4	; 164
+  e8:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+
+	while(!(TWCR & (1<<TWINT)));
+  ec:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+  f0:	88 23       	and	r24, r24
+  f2:	e4 f7       	brge	.-8      	; 0xec <I2C_Start+0x6>
+}
+  f4:	08 95       	ret
+
+000000f6 <I2C_Stop>:
+
+void I2C_Stop(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+  f6:	84 e9       	ldi	r24, 0x94	; 148
+  f8:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+  fc:	08 95       	ret
+
+000000fe <I2C_Write>:
+}
+
+void I2C_Write(uint8_t data)
+{
+	TWDR = data;
+  fe:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 102:	84 e8       	ldi	r24, 0x84	; 132
+ 104:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+
+	while(!(TWCR & (1<<TWINT)));
+ 108:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 10c:	88 23       	and	r24, r24
+ 10e:	e4 f7       	brge	.-8      	; 0x108 <I2C_Write+0xa>
+ 110:	08 95       	ret
+
+00000112 <main>:
+ #define F_CPU 16000000UL
+ #include <util/delay.h>
+ 
+ int main(void)
+ {
+	 GPIO_Init();
+ 112:	0e 94 5a 00 	call	0xb4	; 0xb4 <GPIO_Init>
+	 ADC_Init();
+ 116:	0e 94 53 00 	call	0xa6	; 0xa6 <ADC_Init>
+	 Servo_Init();
+ 11a:	0e 94 35 01 	call	0x26a	; 0x26a <Servo_Init>
+	 UART_Init();
+ 11e:	0e 94 4e 01 	call	0x29c	; 0x29c <UART_Init>
+	 I2C_Init();
+ 122:	0e 94 6a 00 	call	0xd4	; 0xd4 <I2C_Init>
+	 OLED_Init();
+ 126:	0e 94 b6 00 	call	0x16c	; 0x16c <OLED_Init>
+	 OLED_Clear();
+ 12a:	0e 94 19 01 	call	0x232	; 0x232 <OLED_Clear>
+// 		Actuator_Update();
+// 	}
+// 	
+	while(1)
+	{
+		UART_SendString("Hello\r\n");
+ 12e:	80 e0       	ldi	r24, 0x00	; 0
+ 130:	91 e0       	ldi	r25, 0x01	; 1
+ 132:	0e 94 62 01 	call	0x2c4	; 0x2c4 <UART_SendString>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 136:	2f ef       	ldi	r18, 0xFF	; 255
+ 138:	83 ed       	ldi	r24, 0xD3	; 211
+ 13a:	90 e3       	ldi	r25, 0x30	; 48
+ 13c:	21 50       	subi	r18, 0x01	; 1
+ 13e:	80 40       	sbci	r24, 0x00	; 0
+ 140:	90 40       	sbci	r25, 0x00	; 0
+ 142:	e1 f7       	brne	.-8      	; 0x13c <main+0x2a>
+ 144:	00 c0       	rjmp	.+0      	; 0x146 <main+0x34>
+ 146:	00 00       	nop
+ 148:	f2 cf       	rjmp	.-28     	; 0x12e <main+0x1c>
+
+0000014a <OLED_Command>:
+	OLED_Command(0x14);
+
+	OLED_Command(0xAF);   // Display ON
+}
+void OLED_Command(uint8_t cmd)
+{
+ 14a:	cf 93       	push	r28
+ 14c:	c8 2f       	mov	r28, r24
+	I2C_Start();
+ 14e:	0e 94 73 00 	call	0xe6	; 0xe6 <I2C_Start>
+
+	I2C_Write(OLED_ADDR);   // Slave Address + Write
+ 152:	88 e7       	ldi	r24, 0x78	; 120
+ 154:	0e 94 7f 00 	call	0xfe	; 0xfe <I2C_Write>
+
+	I2C_Write(0x00);        // Command mode
+ 158:	80 e0       	ldi	r24, 0x00	; 0
+ 15a:	0e 94 7f 00 	call	0xfe	; 0xfe <I2C_Write>
+
+	I2C_Write(cmd);
+ 15e:	8c 2f       	mov	r24, r28
+ 160:	0e 94 7f 00 	call	0xfe	; 0xfe <I2C_Write>
+
+	I2C_Stop();
+ 164:	0e 94 7b 00 	call	0xf6	; 0xf6 <I2C_Stop>
+}
+ 168:	cf 91       	pop	r28
+ 16a:	08 95       	ret
+
+0000016c <OLED_Init>:
+
+#define OLED_ADDR 0x78      // 0x3C << 1
+
+void OLED_Init(void)
+{
+	OLED_Command(0xAE);   // Display OFF
+ 16c:	8e ea       	ldi	r24, 0xAE	; 174
+ 16e:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0x20);   // Memory Addressing Mode
+ 172:	80 e2       	ldi	r24, 0x20	; 32
+ 174:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x00);   // Horizontal Addressing
+ 178:	80 e0       	ldi	r24, 0x00	; 0
+ 17a:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xB0);   // Page 0
+ 17e:	80 eb       	ldi	r24, 0xB0	; 176
+ 180:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xC8);   // COM Scan Direction
+ 184:	88 ec       	ldi	r24, 0xC8	; 200
+ 186:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0x00);   // Low Column
+ 18a:	80 e0       	ldi	r24, 0x00	; 0
+ 18c:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x10);   // High Column
+ 190:	80 e1       	ldi	r24, 0x10	; 16
+ 192:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0x40);   // Start Line
+ 196:	80 e4       	ldi	r24, 0x40	; 64
+ 198:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0x81);   // Contrast
+ 19c:	81 e8       	ldi	r24, 0x81	; 129
+ 19e:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x7F);
+ 1a2:	8f e7       	ldi	r24, 0x7F	; 127
+ 1a4:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xA1);   // Segment Remap
+ 1a8:	81 ea       	ldi	r24, 0xA1	; 161
+ 1aa:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xA6);   // Normal Display
+ 1ae:	86 ea       	ldi	r24, 0xA6	; 166
+ 1b0:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xA8);   // Multiplex Ratio
+ 1b4:	88 ea       	ldi	r24, 0xA8	; 168
+ 1b6:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x3F);
+ 1ba:	8f e3       	ldi	r24, 0x3F	; 63
+ 1bc:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xD3);   // Display Offset
+ 1c0:	83 ed       	ldi	r24, 0xD3	; 211
+ 1c2:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x00);
+ 1c6:	80 e0       	ldi	r24, 0x00	; 0
+ 1c8:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xD5);   // Clock Divide
+ 1cc:	85 ed       	ldi	r24, 0xD5	; 213
+ 1ce:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x80);
+ 1d2:	80 e8       	ldi	r24, 0x80	; 128
+ 1d4:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xD9);   // Precharge
+ 1d8:	89 ed       	ldi	r24, 0xD9	; 217
+ 1da:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0xF1);
+ 1de:	81 ef       	ldi	r24, 0xF1	; 241
+ 1e0:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xDA);   // COM Pins
+ 1e4:	8a ed       	ldi	r24, 0xDA	; 218
+ 1e6:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x12);
+ 1ea:	82 e1       	ldi	r24, 0x12	; 18
+ 1ec:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xDB);   // VCOMH
+ 1f0:	8b ed       	ldi	r24, 0xDB	; 219
+ 1f2:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x40);
+ 1f6:	80 e4       	ldi	r24, 0x40	; 64
+ 1f8:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0x8D);   // Charge Pump
+ 1fc:	8d e8       	ldi	r24, 0x8D	; 141
+ 1fe:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+	OLED_Command(0x14);
+ 202:	84 e1       	ldi	r24, 0x14	; 20
+ 204:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+	OLED_Command(0xAF);   // Display ON
+ 208:	8f ea       	ldi	r24, 0xAF	; 175
+ 20a:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+ 20e:	08 95       	ret
+
+00000210 <OLED_Data>:
+
+	I2C_Stop();
+}
+
+void OLED_Data(uint8_t data)
+{
+ 210:	cf 93       	push	r28
+ 212:	c8 2f       	mov	r28, r24
+	I2C_Start();
+ 214:	0e 94 73 00 	call	0xe6	; 0xe6 <I2C_Start>
+
+	I2C_Write(OLED_ADDR);
+ 218:	88 e7       	ldi	r24, 0x78	; 120
+ 21a:	0e 94 7f 00 	call	0xfe	; 0xfe <I2C_Write>
+
+	I2C_Write(0x40);        // Data mode
+ 21e:	80 e4       	ldi	r24, 0x40	; 64
+ 220:	0e 94 7f 00 	call	0xfe	; 0xfe <I2C_Write>
+
+	I2C_Write(data);
+ 224:	8c 2f       	mov	r24, r28
+ 226:	0e 94 7f 00 	call	0xfe	; 0xfe <I2C_Write>
+
+	I2C_Stop();
+ 22a:	0e 94 7b 00 	call	0xf6	; 0xf6 <I2C_Stop>
+}
+ 22e:	cf 91       	pop	r28
+ 230:	08 95       	ret
+
+00000232 <OLED_Clear>:
+
+void OLED_Clear(void)
+{
+ 232:	cf 93       	push	r28
+ 234:	df 93       	push	r29
+	uint8_t page;
+	uint8_t column;
+
+	for(page = 0; page < 8; page++)
+ 236:	d0 e0       	ldi	r29, 0x00	; 0
+ 238:	13 c0       	rjmp	.+38     	; 0x260 <OLED_Clear+0x2e>
+	{
+		OLED_Command(0xB0 + page);
+ 23a:	80 eb       	ldi	r24, 0xB0	; 176
+ 23c:	8d 0f       	add	r24, r29
+ 23e:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+		OLED_Command(0x00);
+ 242:	80 e0       	ldi	r24, 0x00	; 0
+ 244:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+		OLED_Command(0x10);
+ 248:	80 e1       	ldi	r24, 0x10	; 16
+ 24a:	0e 94 a5 00 	call	0x14a	; 0x14a <OLED_Command>
+
+		for(column = 0; column < 128; column++)
+ 24e:	c0 e0       	ldi	r28, 0x00	; 0
+ 250:	04 c0       	rjmp	.+8      	; 0x25a <OLED_Clear+0x28>
+		{
+			OLED_Data(0x00);
+ 252:	80 e0       	ldi	r24, 0x00	; 0
+ 254:	0e 94 08 01 	call	0x210	; 0x210 <OLED_Data>
+
+		OLED_Command(0x00);
+
+		OLED_Command(0x10);
+
+		for(column = 0; column < 128; column++)
+ 258:	cf 5f       	subi	r28, 0xFF	; 255
+ 25a:	cc 23       	and	r28, r28
+ 25c:	d4 f7       	brge	.-12     	; 0x252 <OLED_Clear+0x20>
+void OLED_Clear(void)
+{
+	uint8_t page;
+	uint8_t column;
+
+	for(page = 0; page < 8; page++)
+ 25e:	df 5f       	subi	r29, 0xFF	; 255
+ 260:	d8 30       	cpi	r29, 0x08	; 8
+ 262:	58 f3       	brcs	.-42     	; 0x23a <OLED_Clear+0x8>
+		for(column = 0; column < 128; column++)
+		{
+			OLED_Data(0x00);
+		}
+	}
+ 264:	df 91       	pop	r29
+ 266:	cf 91       	pop	r28
+ 268:	08 95       	ret
+
+0000026a <Servo_Init>:
+#include "servo.h"
+#include "TIMER_1_PWM.h"
+
+void Servo_Init(void)
+{
+	PWM_Init();
+ 26a:	0e 94 38 01 	call	0x270	; 0x270 <PWM_Init>
+ 26e:	08 95       	ret
+
+00000270 <PWM_Init>:
+#include "TIMER_1_PWM.h"
+#include <stdint.h>
+
+void PWM_Init(void)
+{
+	DDRB |= (1<<PB1);
+ 270:	84 b1       	in	r24, 0x04	; 4
+ 272:	82 60       	ori	r24, 0x02	; 2
+ 274:	84 b9       	out	0x04, r24	; 4
+
+	ICR1 = 39999;  // reset to 0 after 39999 
+ 276:	8f e3       	ldi	r24, 0x3F	; 63
+ 278:	9c e9       	ldi	r25, 0x9C	; 156
+ 27a:	90 93 87 00 	sts	0x0087, r25	; 0x800087 <__TEXT_REGION_LENGTH__+0x7f8087>
+ 27e:	80 93 86 00 	sts	0x0086, r24	; 0x800086 <__TEXT_REGION_LENGTH__+0x7f8086>
+
+	OCR1A = 3000;   // start in the middle 90 degree =3000 as per calculation
+ 282:	88 eb       	ldi	r24, 0xB8	; 184
+ 284:	9b e0       	ldi	r25, 0x0B	; 11
+ 286:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
+ 28a:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
+
+	TCCR1A =(1<<COM1A1) |(1<<WGM11);  //COM1A1: Enable PWM output on OC1A (PB1)
+ 28e:	82 e8       	ldi	r24, 0x82	; 130
+ 290:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+
+	TCCR1B =(1<<WGM13) |(1<<WGM12) |(1<<CS11);  // CS11 PRESCALAR 8
+ 294:	8a e1       	ldi	r24, 0x1A	; 26
+ 296:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+ 29a:	08 95       	ret
+
+0000029c <UART_Init>:
+#include "uart.h"
+
+void UART_Init(void)
+{
+
+	UBRR0 = 103;								  // Baud Rate  
+ 29c:	87 e6       	ldi	r24, 0x67	; 103
+ 29e:	90 e0       	ldi	r25, 0x00	; 0
+ 2a0:	90 93 c5 00 	sts	0x00C5, r25	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+ 2a4:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+	UCSR0B = (1<<TXEN0) | (1<<RXEN0);			 //Enable TX and RX 
+ 2a8:	88 e1       	ldi	r24, 0x18	; 24
+ 2aa:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+	UCSR0C = (1<<UCSZ01) | (1<<UCSZ00);          //8-bit, No parity, 1 Stop
+ 2ae:	86 e0       	ldi	r24, 0x06	; 6
+ 2b0:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 2b4:	08 95       	ret
+
+000002b6 <UART_SendChar>:
+}
+
+void UART_SendChar(char data)
+{
+	while(!(UCSR0A & (1<<UDRE0)));
+ 2b6:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 2ba:	95 ff       	sbrs	r25, 5
+ 2bc:	fc cf       	rjmp	.-8      	; 0x2b6 <UART_SendChar>
+
+	UDR0 = data;
+ 2be:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 2c2:	08 95       	ret
+
+000002c4 <UART_SendString>:
+}
+
+void UART_SendString(const char *str)
+{
+ 2c4:	cf 93       	push	r28
+ 2c6:	df 93       	push	r29
+ 2c8:	ec 01       	movw	r28, r24
+	while(*str)
+ 2ca:	03 c0       	rjmp	.+6      	; 0x2d2 <UART_SendString+0xe>
+	{
+		UART_SendChar(*str);
+ 2cc:	0e 94 5b 01 	call	0x2b6	; 0x2b6 <UART_SendChar>
+
+		str++;
+ 2d0:	21 96       	adiw	r28, 0x01	; 1
+	UDR0 = data;
+}
+
+void UART_SendString(const char *str)
+{
+	while(*str)
+ 2d2:	88 81       	ld	r24, Y
+ 2d4:	81 11       	cpse	r24, r1
+ 2d6:	fa cf       	rjmp	.-12     	; 0x2cc <UART_SendString+0x8>
+	{
+		UART_SendChar(*str);
+
+		str++;
+	}
+ 2d8:	df 91       	pop	r29
+ 2da:	cf 91       	pop	r28
+ 2dc:	08 95       	ret
+
+000002de <_exit>:
+ 2de:	f8 94       	cli
+
+000002e0 <__stop_program>:
+ 2e0:	ff cf       	rjmp	.-2      	; 0x2e0 <__stop_program>
