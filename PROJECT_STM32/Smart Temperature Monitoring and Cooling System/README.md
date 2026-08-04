@@ -90,9 +90,6 @@ The Smart Temperature Monitoring and Cooling System is an embedded systems proje
 
 ## Project Demonstration
 
-**GitHub Repository:**  
-(Add GitHub link)
-
 **Demo Video:**  
 https://drive.google.com/file/d/1XHzOymF6VWv5NTq-1nIkLiiVKt9mzlR7/view?usp=sharing
 
