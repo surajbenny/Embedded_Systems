@@ -5,6 +5,10 @@
 The Smart Temperature Monitoring and Cooling System is an embedded systems project developed using the STM32F446RE (ARM Cortex-M4) microcontroller. The system continuously monitors temperature using the BMP280 sensor. The measured temperature is displayed on an SSD1306 OLED display and transmitted over UART for debugging. An LED brightness is controlled using PWM to visually indicate the temperature level. When the temperature exceeds **33°C**, the cooling fan is automatically switched ON through an L293D motor driver.
 
 ---
+## Project Demonstration
+
+**Demo Video:**  
+https://drive.google.com/file/d/1XHzOymF6VWv5NTq-1nIkLiiVKt9mzlR7/view?usp=sharing
 
 ## Features
 
@@ -85,15 +89,6 @@ The Smart Temperature Monitoring and Cooling System is an embedded systems proje
 - Timer Configuration
 - Sensor Interfacing
 - Embedded Firmware Development
-
----
-
-## Project Demonstration
-
-**Demo Video:**  
-https://drive.google.com/file/d/1XHzOymF6VWv5NTq-1nIkLiiVKt9mzlR7/view?usp=sharing
-
----
 
 ## Author
 
